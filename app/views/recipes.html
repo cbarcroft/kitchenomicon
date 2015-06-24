@@ -1,0 +1,12 @@
+<div>
+    {{ ctrl.recipe.head.title }}
+    <ul>
+        <li ng-repeat="ingredient in ctrl.recipe.ingredients">
+            {{ingredient.amt.qty}} {{ingredient.amt.unit}} {{ingredient.item}} <span ng-show="ingredient.special">({{ingredient.special}})</span>
+        </li>
+    </ul>
+
+    <ul>
+        <li ng-repeat="step in ctrl.recipe.directions.steps">{{ step }}</li>
+    </ul>
+</div>
