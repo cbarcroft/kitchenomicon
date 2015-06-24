@@ -11,7 +11,7 @@ angular.module('kitchenomicon')
 
             var query = new Parse.Query("Recipe");
             query.get(objectId).then(function(recipeObject){
-                self.recipe = recipeObject.get('data');
+                self.recipe = JSON.parse(recipeObject.get('data'));
             });
         }
 

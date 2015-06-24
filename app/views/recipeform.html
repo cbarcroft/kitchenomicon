@@ -1,0 +1,38 @@
+<form ng-submit="ctrl.updateRecipe()">
+    <p>
+        <label for="title">Title</label>
+        <input type="text" id="title" ng-model="ctrl.title">
+    </p>
+    <fieldset ng-repeat="ingredient in ctrl.ingredients">
+        Quantity <input type="text" name="" ng-model="ingredient.amt.qty" />
+        Unit <input type="text" name="" ng-model="ingredient.amt.unit" />
+        Item <input type="text" name="" ng-model="ingredient.item" />
+        Special <input type="text" name="" ng-model="ingredient.special" />
+        <button ng-click="ctrl.removeIngredient(ingredient)">Remove</button>
+    </fieldset>
+
+    <button type="button" ng-click="ctrl.addNewIngredient()">New Ingredient</button>
+
+    <fieldset ng-repeat="step in ctrl.directions.steps">
+        <textarea ng-model="step.text"></textarea>
+        <button ng-click="ctrl.removeStep(step)">Remove</button>
+    </fieldset>
+
+    <button type="button" ng-click="ctrl.addNewStep()">New Step</button>
+
+    <input type="submit" value="Save">
+</form>
+
+<div>
+    <h4>Ingredients</h4>
+    {{ ctrl.ingredients }}
+</div>
+
+<div>
+    <h4>Directions</h4>
+    {{ ctrl.directions }}
+</div>
+
+<div>
+    {{ctrl.json}}
+</div>

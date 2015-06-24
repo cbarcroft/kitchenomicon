@@ -1,0 +1,8 @@
+<div>
+    All Recipes
+    <ul>
+        <li ng-repeat="recipeObject in ctrl.recipes">
+            <a href="#/recipes/{{ recipeObject.id }}">{{ recipeObject.data.head.title }}</a>
+        </li>
+    </ul>
+</div>
